@@ -106,7 +106,7 @@ function App() {
       <Router>
         <Navbar/>
         <Switch>
-          <Route path='/home' exact render={(props) => <Home products={filteredProducts} {...props} />} />
+          <Route path='/' exact render={(props) => <Home products={filteredProducts} {...props} />} />
           <Route path='/login' exact component={Login} />
           <Route path='/product/:id' exact component={ProductPage} />
           <Route path='/dashboard' exact render={(props) => <Dashboard products={filteredProducts} {...props} />} />

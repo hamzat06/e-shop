@@ -5,7 +5,7 @@ export const Navbar = () => {
 	return (
 		<div className="uk-container uk-container-expand uk-box-shadow-small">
 			<div className="uk-container uk-flex uk-flex-between">
-				<Link to="/home" className="uk-navbar-item uk-logo uk-navbar-left uk-text-bold">
+				<Link to="/" className="uk-navbar-item uk-logo uk-navbar-left uk-text-bold">
 					E-Shop
 				</Link>
 
