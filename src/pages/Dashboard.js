@@ -1,17 +1,23 @@
 import React, { useState } from "react"
+import UIkit from "uikit"
 import { Modal } from "../components/Modal"
 
+
 export const Dashboard = ({products}) => {
-	const [showModal, setShowModal] = useState(false)
+	const [selectedIndex, setSelectedIndex] = useState({})
+
+	function trackProduct(item) {
+		setSelectedIndex(item)
+	}
 
 	return (
 		<div className="uk-container uk-container-expanded">
 			<div className="uk-container">
 
 				<div className="uk-margin-large-top">
-					<a data-uk-toggle="target: .uk-modal" className="uk-button uk-button-secondary">Add New Product</a>
+					<a data-uk-toggle={"target: #modal-full"} onClick={() => {setSelectedIndex({})}} className="uk-button uk-button-secondary">Add New Product</a>
 				</div>
-				<Modal/>
+				<Modal product={selectedIndex} />
 
 				<div class="uk-overflow-auto uk-margin-large-top">
 						<h2 className="uk-text-center uk-text-bold">Products Listing</h2>
@@ -29,20 +35,20 @@ export const Dashboard = ({products}) => {
 				        <tbody>
 
 				        		{
-					            products.map((product) => {
+					            products.map((product, i) => {
 					              return(
-					                <tr>
+					                <tr key={i}>
 							                <td><input class="uk-checkbox" type="checkbox"/></td>
-							                <td><img class="uk-preserve-width" src={product.image} width="40" alt=""/></td>
+							                <td><img class="uk-preserve-width" src={product?.image} width="40" alt=""/></td>
 							                <td class="uk-table-link">
-							                    <a class="uk-link-reset" href="">{product.title}</a>
+							                    <a class="uk-link-reset" href="">{product?.title}</a>
 							                </td>
 							                <td class="uk-text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</td>
 							                <td class="uk-text-nowrap">$399</td>
 							                <td>
 							                	<div>
-							                		<a data-uk-icon="pencil" className="uk-margin-small-right uk-text-primary"></a>
-							                		<a data-uk-icon="trash" className="uk-text-danger"></a>
+							                		<a onClick={() => trackProduct(product)} data-uk-icon="pencil" className="uk-margin-small-right uk-text-primary" data-uk-toggle={"target: #modal-full"}></a>
+							                		<a data-uk-icon="trash" className="uk-text-danger" onClick={() => {UIkit.modal.confirm('Delete ' + product?.title)}}></a>
 							                	</div>
 							                </td>
 							            </tr>

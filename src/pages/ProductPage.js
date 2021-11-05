@@ -1,13 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
-export const ProductPage = () => {
+export const ProductPage = ({match, history}) => {
+	const {state} = history.location
 	return (
 		<div className="uk-container uk-container-expanded">
 			<div className="uk-container uk-padding">
 				<div className="uk-child-width-1-2@m uk-grid" uk-grid>
 					<div>
 
-						<a href="" className="uk-button uk-button-link uk-hidden@m uk-margin"><span data-uk-icon="chevron-left"></span>Back to products listing</a>
+						<Link to="/" className="uk-button uk-button-link uk-hidden@m uk-margin"><span data-uk-icon="chevron-left"></span>Back to products listing</Link>
+						
 
 						<div class="uk-position-relative" uk-slideshow="animation: fade">
 
@@ -36,10 +39,10 @@ export const ProductPage = () => {
 					</div>
 					<div>
 						<div>
-							<a href="" className="uk-button uk-button-link uk-visible@m"><span data-uk-icon="chevron-left"></span>Back to products listing</a>
+							<Link to="/" className="uk-button uk-button-link uk-visible@m"><span data-uk-icon="chevron-left"></span>Back to products listing</Link>
 							<hr className="uk-divider-icon uk-margin-small-top uk-visible@m"/>
 							<div className="uk-margin">
-								<h2 className="uk-text-bold">Dummy Product Name</h2>
+								<h2 className="uk-text-bold">{state.title}</h2>
 								<h3 className="uk-margin-remove-top uk-text-bold">$399</h3>
 								<p className="uk-margin-remove-top">
 									Lorem ipsum dolor sit amet consectetur adipisicing, elit. Ex eos suscipit esse commodi exercitationem neque expedita fugiat, fuga, repudiandae quam nostrum id magni inventore perspiciatis animi dolorem nam accusantium illum.

@@ -1,11 +1,18 @@
 import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import './App.css';
 import { Navbar } from "./components/Navbar";
-// import { Home } from "./pages/Home";
+import { Home } from "./pages/Home";
 import { Footer } from "./components/Footer"
-// import { Login } from "./pages/Login"
-// import { ProductPage } from "./pages/ProductPage"
+import { Login } from "./pages/Login"
+import { ProductPage } from "./pages/ProductPage"
 import { Dashboard } from "./pages/Dashboard"
+import { NoPageFound } from "./pages/NoPageFound"
 
 function App() {
 
@@ -83,23 +90,30 @@ function App() {
   ]
 
   const [searchField, setSearchField] = useState("");
+  const [currentPage, setCurrentPage] = useState("home")
+
   const onSearchChange = (e) => {
     e.preventDefault()
     setSearchField( e.target.value )
   }
 
-  const filteredProducts = products.filter(product => {
-    return product.title.toLowerCase().includes(searchField.toLowerCase())
+  const filteredProducts = products?.filter(product => {
+    return product?.title?.toLowerCase().includes(searchField.toLowerCase())
   })
 
   return (
     <div className="App">
-      <Navbar/>
-      {/*<Home products={filteredProducts} searchChange={onSearchChange}/>*/}
-      {/*<Login/>*/}
-      {/*<ProductPage/>*/}
-      <Dashboard products={products}/>
-      <Footer/>
+      <Router>
+        <Navbar/>
+        <Switch>
+          <Route path='/' exact render={(props) => <Home products={filteredProducts} {...props} />} />
+          <Route path='/login' exact component={Login} />
+          <Route path='/product/:id' exact component={ProductPage} />
+          <Route path='/dashboard' exact render={(props) => <Dashboard products={filteredProducts} {...props} />} />
+          <Route component={NoPageFound} />
+        </Switch>
+      </Router>
+    <Footer/>
     </div>
   );
 }
