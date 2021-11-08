@@ -1,5 +1,6 @@
 {
   "name": "e-shop",
+  "homepage": "http://hamzat06.github.io/e-shop",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
