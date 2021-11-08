@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios"
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,11 +16,11 @@ import { Dashboard } from "./pages/Dashboard"
 import { NoPageFound } from "./pages/NoPageFound"
 
 function App() {
-
+  
   const products = [
     {
       id: 1,
-      title: "First Product",
+      title: "Activity 1",
       description: "First Product description",
       image: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
       price: "$399"
@@ -91,10 +92,33 @@ function App() {
 
   const [searchField, setSearchField] = useState("");
   const [currentPage, setCurrentPage] = useState("home")
+  const [user, setUser] = useState({})
+  const [handleLogin, setHandleLogin] = useState({})
+  const [loggedIn, setLoggedIn] = useState(false)
+
+  useEffect(() => {
+    checkLoginStatus()
+  }, []);
 
   const onSearchChange = (e) => {
     e.preventDefault()
-    setSearchField( e.target.value )
+    setSearchField(e.target.value)
+  }
+
+  function checkLoginStatus () {
+    axios
+      .get("http://localhost:3001/logged_in",
+        { withCredentials: true }
+      ).then(res => {
+          if (res?.data?.logged_in && !loggedIn) {
+            setLoggedIn(true)
+            setUser(res.data.user)
+          } else if (!res.data.logged_in && loggedIn) {
+            setLoggedIn(false)
+            setUser({})
+          }
+        }).catch(err => console.log("check logged in?", err))
+
   }
 
   const filteredProducts = products?.filter(product => {
@@ -104,10 +128,10 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar/>
+        <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} setUser={setUser} />
         <Switch>
           <Route path='/' exact render={(props) => <Home products={filteredProducts} {...props} />} />
-          <Route path='/login' exact component={Login} />
+          <Route path='/login' exact render={(props) => <Login setHandleLogin={setHandleLogin} setUser={setUser} {...props} />} />
           <Route path='/product/:id' exact component={ProductPage} />
           <Route path='/dashboard' exact render={(props) => <Dashboard products={filteredProducts} {...props} />} />
           <Route component={NoPageFound} />

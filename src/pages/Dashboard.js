@@ -5,6 +5,7 @@ import { Modal } from "../components/Modal"
 
 export const Dashboard = ({products}) => {
 	const [selectedIndex, setSelectedIndex] = useState({})
+	const [secondForm, setSecondForm] = useState(false)
 
 	function trackProduct(item) {
 		setSelectedIndex(item)
@@ -14,10 +15,11 @@ export const Dashboard = ({products}) => {
 		<div className="uk-container uk-container-expanded">
 			<div className="uk-container">
 
-				<div className="uk-margin-large-top">
-					<a data-uk-toggle={"target: #modal-full"} onClick={() => {setSelectedIndex({})}} className="uk-button uk-button-secondary">Add New Product</a>
+				<div className="uk-margin-large-top uk-block">
+					<a data-uk-toggle={"target: #modal-full"} onClick={() => {setSecondForm(false)}} className="uk-button uk-button-secondary">Add New Activity</a>
+					<a data-uk-toggle={"target: #modal-full"} className="uk-button uk-button-primary" onClick={() => setSecondForm(true)}>Add New Knowledge</a>
 				</div>
-				<Modal product={selectedIndex} />
+				<Modal product={selectedIndex} secondForm={secondForm} />
 
 				<div class="uk-overflow-auto uk-margin-large-top">
 						<h2 className="uk-text-center uk-text-bold">Products Listing</h2>

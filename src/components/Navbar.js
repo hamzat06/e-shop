@@ -1,7 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import axios from "axios"
+import { Link, useHistory } from "react-router-dom"
+import UIkit from "uikit"
 
-export const Navbar = () => {
+export const Navbar = (props) => {
+	const history = useHistory()
+
+	const handleLogout = () => {
+		axios.delete("http://localhost3001/logout", { withCredentials: true }).then(res => {
+			props.setLoggedIn(false)
+	    props.setUser({})
+	    history.replace("/login")
+	    UIkit.notification({
+			    message: '<span uk-icon=\'icon: check\'></span> Log out Successful',
+			    status: 'success',
+			    pos: 'top-right',
+			    timeout: 3000
+			});
+		}).catch(err => {
+			console.log("logout error", err)			
+		})
+  }
 	return (
 		<div className="uk-container uk-container-expand uk-box-shadow-small">
 			<div className="uk-container uk-flex uk-flex-between">
@@ -9,14 +28,31 @@ export const Navbar = () => {
 					E-Shop
 				</Link>
 
-				<ul className="uk-navbar-nav">
-					<li>
-						<Link to="/dashboard" className="uk-button uk-button-text uk-margin-small">Dashboard</Link>
-					</li>
-				</ul>
+				{
+					props?.loggedIn ? (
+						<ul className="uk-navbar-nav">
+							<li>
+								<Link to="/dashboard" className="uk-button uk-button-text uk-margin-small">Admin</Link>
+							</li>
+						</ul>
+					):(
+						<span></span>
+					)
+				}
+				
 
 				<div class="uk-navbar-item">
-					<Link to="/login" className="uk-button uk-button-secondary uk-margin-small">Log in</Link>
+					{ props.loggedIn ? (
+							<a className="uk-button uk-button-danger uk-margin-small" onClick={() => {
+								props.setLoggedIn(false)
+						    props.setUser({})
+						    history.replace("/")
+							}}>Log out</a>
+						):
+						(
+							<Link to="/login" className="uk-button uk-button-secondary uk-margin-small">Log in</Link>
+						)
+					}
 				</div>
 			</div>
 		</div>
