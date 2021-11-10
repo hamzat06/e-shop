@@ -76,7 +76,7 @@ function App() {
     },
     {
       id: 9,
-      title: "9",
+      title: "Activity 9",
       description: "Nineth Product description",
       image: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
       price: "$399"
