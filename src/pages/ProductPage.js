@@ -9,7 +9,7 @@ export const ProductPage = ({match, history}) => {
 				<div className="uk-child-width-1-2@m uk-grid" uk-grid>
 					<div>
 
-						<Link to="/" className="uk-button uk-button-link uk-hidden@m uk-margin"><span data-uk-icon="chevron-left"></span>Back to products listing</Link>
+						<Link to="/" className="uk-button uk-button-link uk-hidden@m uk-margin"><span data-uk-icon="chevron-left"></span>Back to activities listing</Link>
 						
 
 						<div class="uk-position-relative" uk-slideshow="animation: fade">
@@ -39,37 +39,40 @@ export const ProductPage = ({match, history}) => {
 					</div>
 					<div>
 						<div>
-							<Link to="/" className="uk-button uk-button-link uk-visible@m"><span data-uk-icon="chevron-left"></span>Back to products listing</Link>
+							<Link to="/" className="uk-button uk-button-link uk-visible@m"><span data-uk-icon="chevron-left"></span>Back to activities listing</Link>
 							<hr className="uk-divider-icon uk-margin-small-top uk-visible@m"/>
 							<div className="uk-margin">
-								<h2 className="uk-text-bold">{state.title}</h2>
-								<h3 className="uk-margin-remove-top uk-text-bold">$399</h3>
-								<p className="uk-margin-remove-top">
-									Lorem ipsum dolor sit amet consectetur adipisicing, elit. Ex eos suscipit esse commodi exercitationem neque expedita fugiat, fuga, repudiandae quam nostrum id magni inventore perspiciatis animi dolorem nam accusantium illum.
-									Lorem ipsum dolor sit amet consectetur adipisicing, elit. Ex eos suscipit esse commodi exercitationem neque expedita fugiat, fuga, repudiandae quam nostrum id magni inventore perspiciatis animi dolorem nam accusantium illum.
-								</p>
-								<a className="uk-button uk-button-secondary">Add to cart</a>
+								<h3 className="uk-text-bold">{state.title}</h3>
+								<p className="uk-margin-remove-top"><span className="uk-text-bold">Activity Number - </span>11225679801</p>
+								<p className="uk-margin-remove-top"><span className="uk-text-bold">Date of Capture - </span>01/05/2021</p>
+								<p className="uk-margin-remove-top"><span className="uk-text-bold">Activity Type - </span>Expert Cleaning</p>
+								<p className="uk-margin-remove-top"><span className="uk-text-bold">Knowledge criticality code -</span> SC</p>
+								
 							</div>
 						</div>
 					</div>
 				</div>
 
 				<div className="uk-margin-large-top">
-					<ul data-uk-tab="connect: .productpagetab;">
-				    <li className="uk-active"><a href="#">Description</a></li>
-				    <li><a href="#">Additional Information</a></li>
-				    <li><a href="#">Reviews(1)</a></li>
-					</ul>
-
-					<ul class="uk-switcher productpagetab uk-margin">
-				    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet consectetur adipisicing, elit. Ex eos suscipit esse commodi exercitationem neque expedita fugiat, fuga, repudiandae quam nostrum id magni inventore perspiciatis animi dolorem nam accusantium illum.
-				    <br/> <br/>
-				    	Lorem ipsum dolor sit amet consectetur adipisicing, elit. Ex eos suscipit esse commodi exercitationem neque expedita fugiat, fuga, repudiandae quam nostrum id magni inventore perspiciatis animi dolorem nam accusantium illum.
-				    	Lorem ipsum dolor sit amet consectetur adipisicing, elit. Ex eos suscipit esse commodi exercitationem neque expedita fugiat, fuga, repudiandae quam nostrum id magni inventore perspiciatis animi dolorem nam accusantium illum.
-				    </li>
-				    <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-				    <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, sed do eiusmod.</li>
-					</ul>
+					<div>
+						<h3 className="uk-h2 uk-text-bold">More Information</h3>
+						<div className="uk-child-width-1-2@s uk-grid" uk-grid>
+							<div>
+								<p><span className="uk-text-bold">Frequency Value - </span>3</p>
+								<p><span className="uk-text-bold">ORI Value - </span>5</p>
+								<p><span className="uk-text-bold">IHSE Value - </span>3</p>
+								<p><span className="uk-text-bold">Frequency Value - </span>2</p>
+								<p><span className="uk-text-bold">MC Value - </span>6</p>
+							</div>
+							<div>
+								<p><span className="uk-text-bold">Source of Labour - </span>Combination</p>
+								<p><span className="uk-text-bold">Number of Labour - </span>4 to 9</p>
+								<p><span className="uk-text-bold">Duration of Technical Work - </span> 0.1 {"<"} 22.9</p>
+								<p><span className="uk-text-bold">Hierarchy of Specialized Labour </span>Supervisor and Site level Coodrinators</p>
+								<p><span className="uk-text-bold">Discipline Requirements - </span>MoOST's Coordinator</p>
+							</div>
+						</div>
+					</div>
 				</div>				
 			</div>
 		</div>

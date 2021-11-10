@@ -28,7 +28,7 @@ export const Navbar = (props) => {
 					E-Shop
 				</Link>
 
-				{
+				{/* {
 					props?.loggedIn ? (
 						<ul className="uk-navbar-nav">
 							<li>
@@ -38,7 +38,12 @@ export const Navbar = (props) => {
 					):(
 						<span></span>
 					)
-				}
+				} */}
+				<ul className="uk-navbar-nav">
+					<li>
+						<Link to="/dashboard" className="uk-button uk-button-text uk-margin-small">Admin</Link>
+					</li>
+				</ul>
 				
 
 				<div class="uk-navbar-item">

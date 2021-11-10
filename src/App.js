@@ -27,63 +27,63 @@ function App() {
     },
     {
       id: 2,
-      title: "Second Product",
+      title: "Activity 2",
       description: "Second product description",
       image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
       price: "$399"
     },
     {
       id: 3,
-      title: "Third Product",
+      title: "Activity 3",
       description: "Third Product description",
       image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&w=1000&q=80",
       price: "$399"
     },
     {
       id: 4,
-      title: "Fourth Product",
+      title: "Activity 4",
       description: "Fourth product description",
       image: "https://bestchineseproducts.com/wp-content/uploads/2019/05/best-huawei-products-2019.png",
       price: "$399"
     },
     {
       id: 5,
-      title: "Fifth Product",
+      title: "Activity 5",
       description: "Fifth Product description",
       image: "https://bestchineseproducts.com/wp-content/uploads/2019/05/best-huawei-products-2019.png",
       price: "$399"
     },
     {
       id: 6,
-      title: "Sixth Product",
+      title: "Activity 6",
       description: "Sixth product description",
       image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
       price: "$399"
     },
     {
       id: 7,
-      title: "Seventh Product",
+      title: "Activity 7",
       description: "Seventh Product description",
       image: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
       price: "$399"
     },
     {
       id: 8,
-      title: "Eight Product",
+      title: "Activity 8",
       description: "Eight product description",
       image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
       price: "$399"
     },
     {
       id: 9,
-      title: "Nineth Product",
+      title: "9",
       description: "Nineth Product description",
       image: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
       price: "$399"
     },
     {
       id: 10,
-      title: "Tenth Product",
+      title: "Activity 10",
       description: "Tenth product description",
       image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
       price: "$399"

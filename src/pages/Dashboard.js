@@ -16,7 +16,7 @@ export const Dashboard = ({products}) => {
 			<div className="uk-container">
 
 				<div className="uk-margin-large-top uk-block">
-					<a data-uk-toggle={"target: #modal-full"} onClick={() => {setSecondForm(false)}} className="uk-button uk-button-secondary">Add New Activity</a>
+					<a data-uk-toggle={"target: #modal-full"} onClick={() => {setSecondForm(false)}} className="uk-button uk-button-secondary uk-margin-right">Add New Activity</a>
 					<a data-uk-toggle={"target: #modal-full"} className="uk-button uk-button-primary" onClick={() => setSecondForm(true)}>Add New Knowledge</a>
 				</div>
 				<Modal product={selectedIndex} secondForm={secondForm} />
@@ -27,10 +27,10 @@ export const Dashboard = ({products}) => {
 				        <thead>
 				            <tr>
 				                <th class="uk-table-shrink"></th>
+				                <th class="uk-table-shrink">Serial Number</th>
 				                <th class="uk-table-shrink">Image</th>
-				                <th class="uk-table-shrink">Title</th>
-				                <th class="uk-width-small">Description</th>
-				                <th class="uk-table-shrink">Price</th>
+				                <th class="uk-width-small">Title</th>
+				                <th class="uk-table-shrink">Date</th>
 				                <th class="uk-table-shrink">Actions</th>
 				            </tr>
 				        </thead>
@@ -41,12 +41,12 @@ export const Dashboard = ({products}) => {
 					              return(
 					                <tr key={i}>
 							                <td><input class="uk-checkbox" type="checkbox"/></td>
+															<td class="uk-text-nowrap">11225679801</td>
 							                <td><img class="uk-preserve-width" src={product?.image} width="40" alt=""/></td>
 							                <td class="uk-table-link">
 							                    <a class="uk-link-reset" href="">{product?.title}</a>
 							                </td>
-							                <td class="uk-text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</td>
-							                <td class="uk-text-nowrap">$399</td>
+							                <td class="uk-text-truncate">10/10/2021</td>
 							                <td>
 							                	<div>
 							                		<a onClick={() => trackProduct(product)} data-uk-icon="pencil" className="uk-margin-small-right uk-text-primary" data-uk-toggle={"target: #modal-full"}></a>
